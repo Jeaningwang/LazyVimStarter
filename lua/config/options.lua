@@ -47,9 +47,9 @@ vim.g.maplocalleader = " "
 vim.o.backup = false
 vim.o.writebackup = false
 vim.o.swapfile = false
--- 把空格显示成一个点
+-- 把空格显示成一个点, tab 显示成一个字符
 vim.o.list = true
-vim.o.listchars = "space:·"
+vim.o.listchars = "space:·,tab:<->"
 -- 右侧参考线
 vim.wo.colorcolumn = "120"
 -- 新行对齐当前行
