@@ -64,8 +64,11 @@ vim.keymap.set("n", "<A-Left>", "<C-o>", opts)
 vim.keymap.set("n", "<A-Right>", "<C-i>", opts)
 
 -- 向上/向下翻页并居中
-vim.keymap.set("n", "<leader>h", "<S-h>zz", opts)
-vim.keymap.set("n", "<leader>l", "<S-l>zz", opts)
+-- vim.keymap.set("n", "<leader>h", "<S-h>zz", opts)
+-- vim.keymap.set("n", "<leader>l", "<S-l>zz", opts)
+
+-- 保存所有的文件
+vim.keymap.set("n", "<leader>bs", "<cmd>wa<cr>", opts)
 
 -----------------
 -- Visual mode --
