@@ -16,7 +16,7 @@ vim.opt.expandtab = true -- tabs are spaces, mainly because of python
 -- UI config
 -- 设置字体字号
 -- vim.cmd("set guifont=" .. vim.fn.fnameescape("Source Code Pro") .. ":h14")
-vim.cmd("set guifont=" .. vim.fn.fnameescape("SauceCodePro Nerd Font Mono") .. ":h16")
+vim.cmd("set guifont=" .. vim.fn.fnameescape("SauceCodePro Nerd Font Mono") .. ":h18")
 -- vim.cmd('set guifont=' .. vim.fn.fnameescape('MesloLGL Nerd Font Mono') .. ':h14')
 -- vim.cmd('set guifont=' .. vim.fn.fnameescape('Hack Nerd Font Mono') .. ':h14')
 vim.opt.number = true -- show absolute number
@@ -59,3 +59,9 @@ vim.bo.smartindent = true
 vim.o.cmdheight = 1
 -- 设置自动换行
 vim.o.wrap = 1
+
+--------------------------------------------
+------------------- Plugins ----------------
+--------------------------------------------
+-- vim.cmd("let g:python3_host_prog = /usr/local/bin/python3")
+vim.g.python3_host_prog = "python3"
