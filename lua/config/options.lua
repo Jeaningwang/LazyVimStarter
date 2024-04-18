@@ -58,7 +58,7 @@ vim.bo.smartindent = true
 -- 设置命令行的高度
 vim.o.cmdheight = 1
 -- 设置自动换行
-vim.o.wrap = 1
+vim.o.wrap = true
 
 --------------------------------------------
 ------------------- Plugins ----------------
