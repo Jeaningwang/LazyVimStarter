@@ -1,8 +1,9 @@
 return {
   "voldikss/vim-translator",
-  opts = {
-    vim.cmd("let g:translator_default_engines = ['bing', 'youdao']"),
-  },
+  opts = {},
+  config = function()
+    vim.cmd("let g:translator_default_engines = ['bing', 'youdao']")
+  end,
   keys = {
     {
       "<leader>sw",
