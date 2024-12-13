@@ -100,3 +100,116 @@ vim.keymap.set({ "i", "n" }, "<Up>", "<Nop>", opts)
 vim.keymap.set({ "i", "n" }, "<Down>", "<Nop>", opts)
 -- 禁用掉ESC
 -- vim.keymap.set({ 'i', 'n' }, '<Esc>', '<Nop>', opts)
+if vim.g.vscode then
+  local vscode = require("vscode")
+
+  local map = vim.keymap.set
+  -- close current buffer
+  map({ "n", "i", "v" }, "<C-w>", function()
+    vscode.action("workbench.action.closeActiveEditor")
+  end, {
+    noremap = true,
+    silent = true,
+    desc = "Close current buffer",
+  })
+
+  -- open command palette
+  map("n", "<leader>:", function()
+    vscode.action("workbench.action.showCommands")
+  end, {
+    noremap = true,
+    silent = true,
+    desc = "Open command palette",
+  })
+
+  -- toggle zen mode
+  map("n", "<leader>tz", function()
+    vscode.action("workbench.action.toggleZenMode")
+  end, {
+    noremap = true,
+    silent = true,
+    desc = "Toggle zen mode",
+  })
+
+  -- switch last buffer
+  map("n", "<leader><space>", function()
+    vscode.action("workbench.action.quickOpenPreviousRecentlyUsedEditorInGroup")
+    vscode.action("list.select")
+  end, {
+    noremap = true,
+    silent = true,
+    desc = "Switch last buffer",
+  })
+
+  --  format code
+  map("n", "<leader>cf", function()
+    vscode.action("editor.action.formatDocument")
+  end, {
+    noremap = true,
+    silent = true,
+    desc = "Format code",
+  })
+
+  -- search in project files
+  map("n", "<leader>sp", function()
+    vscode.action("workbench.action.findInFiles")
+  end, {
+    noremap = true,
+    silent = true,
+    desc = "Search in project files",
+  })
+
+  -- navigate to file
+  map("n", "<leader>pf", function()
+    vscode.action("workbench.action.quickOpen")
+  end, {
+    noremap = true,
+    silent = true,
+    desc = "Navigate to file",
+  })
+
+  -- go to symbol
+  map("n", "<leader>gs", function()
+    vscode.action("workbench.action.showAllSymbols")
+  end, {
+    noremap = true,
+    silent = true,
+    desc = "Go to symbol",
+  })
+
+  -- show all file in editor
+  map("n", "<leader>ff", function()
+    vscode.action("workbench.action.showAllEditors")
+  end, {
+    noremap = true,
+    silent = true,
+    desc = "Show all file in editor",
+  })
+
+  -- show recent used files
+  map("n", "<leader>fr", function()
+    vscode.action("workbench.action.showAllEditorsByMostRecentlyUsed")
+  end, {
+    noremap = true,
+    silent = true,
+    desc = "Show recent used files",
+  })
+
+  -- rename variables
+  map({ "n", "v" }, "<leader>rn", function()
+    vscode.action("editor.action.rename")
+  end, {
+    noremap = true,
+    silent = true,
+    desc = "Rename variables",
+  })
+
+  -- code runner
+  map("n", "<leader>ur", function()
+    vscode.action("code-runner.run")
+  end, {
+    noremap = true,
+    silent = true,
+    desc = "Code runner",
+  })
+end
