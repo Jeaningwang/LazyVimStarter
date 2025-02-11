@@ -68,7 +68,7 @@ vim.keymap.set("n", "<A-Right>", "<C-i>", opts)
 -- vim.keymap.set("n", "<leader>l", "<S-l>zz", opts)
 
 -- 保存所有的文件
-vim.keymap.set("n", "<leader>bs", "<cmd>wa<cr>", opts)
+vim.keymap.set("n", "<leader>fs", "<cmd>wa<cr>", { noremap = true, silent = true, desc = "Save all files" })
 
 -- buffers
 vim.keymap.set("n", "<leader><space>", "<cmd>e #<cr>", { desc = "Switch to Other Buffer" })
